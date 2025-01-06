@@ -30,14 +30,10 @@ Encoder::~Encoder()
 
 void Encoder::init_pcnt()
 {
-  int intr_priority = 0;
-
   // Configure PCNT unit
   pcnt_unit_config_t unit_config = {
       .low_limit = INT16_MIN,
       .high_limit = INT16_MAX,
-      .intr_priority = intr_priority,
-      .flags = {},
   };
   ESP_ERROR_CHECK(pcnt_new_unit(&unit_config, &m_pcnt_unit));
 
@@ -45,7 +41,6 @@ void Encoder::init_pcnt()
   pcnt_chan_config_t chan_a_config = {
       .edge_gpio_num = static_cast<int>(m_pin_a),
       .level_gpio_num = static_cast<int>(m_pin_b), // we leave the ESP to decide the level pin
-      .flags = {},
   };
   pcnt_channel_handle_t chan_a;
   ESP_ERROR_CHECK(pcnt_new_channel(m_pcnt_unit, &chan_a_config, &chan_a));
@@ -53,7 +48,6 @@ void Encoder::init_pcnt()
   pcnt_chan_config_t chan_b_config = {
       .edge_gpio_num = static_cast<int>(m_pin_b),
       .level_gpio_num = static_cast<int>(m_pin_a), // we leave the ESP to decide the level pin
-      .flags = {},
   };
   pcnt_channel_handle_t chan_b;
   ESP_ERROR_CHECK(pcnt_new_channel(m_pcnt_unit, &chan_b_config, &chan_b));

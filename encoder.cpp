@@ -5,10 +5,10 @@
 #include "esp_err.h"
 #include "esp_timer.h"
 
-Encoder::Encoder(unsigned int pin_a, unsigned int pin_b, int cpr)
+Encoder::Encoder(unsigned int pin_a, unsigned int pin_b, int ppr)
     : m_pin_a(pin_a),
       m_pin_b(pin_b),
-      m_cpr(cpr),
+      m_cpr(ppr * 4.f), // Quadrature encoder
       m_total_count(0),
       m_position(0.f),
       m_velocity(0.f),

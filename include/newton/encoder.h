@@ -5,7 +5,7 @@
 class Encoder
 {
 public:
-  Encoder(unsigned int pin_a, unsigned int pin_b, int cpr);
+  Encoder(unsigned int pin_a, unsigned int pin_b, int ppr);
   ~Encoder();
 
   void update(); // Call this periodically to update velocity

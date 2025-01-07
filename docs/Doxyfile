@@ -1,0 +1,10 @@
+PROJECT_NAME           = "newton-esp-actuator"
+OUTPUT_DIRECTORY       = doxygen
+GENERATE_XML          = YES
+XML_OUTPUT            = xml
+INPUT                 = ../include
+FILE_PATTERNS         = *.h *.hpp
+RECURSIVE             = YES
+EXTRACT_ALL           = YES
+EXTRACT_PRIVATE       = YES
+EXTRACT_STATIC        = YES

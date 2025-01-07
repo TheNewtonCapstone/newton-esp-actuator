@@ -5,6 +5,8 @@
 #include "esp_err.h"
 #include "esp_timer.h"
 
+using namespace newton;
+
 Encoder::Encoder(unsigned int pin_a, unsigned int pin_b, int ppr)
     : m_pin_a(pin_a),
       m_pin_b(pin_b),

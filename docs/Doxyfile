@@ -5,6 +5,7 @@ XML_OUTPUT            = xml
 INPUT                 = ../include
 FILE_PATTERNS         = *.h *.hpp
 RECURSIVE             = YES
+ENABLE_PREPROCESSING  = NO # avoid doxygen to discover includes without being told to do so
 EXTRACT_ALL           = YES
 EXTRACT_PRIVATE       = YES
 EXTRACT_STATIC        = YES
